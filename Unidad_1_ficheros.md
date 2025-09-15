@@ -109,3 +109,24 @@ La clase `File` proporciona utilidades para manejar ficheros y directorios:
   - indicar el nombre de un fichero **con la ruta relativa**.
   - indicar el nombre de un fichero **con la ruta absoluta**.
 
+## 2.3. Ejemplos
+- Para crear un objeto File existen diferentes constructores según cómo se desee especificar la ruta del archivo:
+```java
+// Crear un objeto File utilizando una cadena que representa la ruta
+File archivo1 = new File("ruta/al/archivo.txt");``
+```
+```java
+// Crear un objeto File utilizando otro objeto File como base y una cadena
+// que representa el nombre del archivo o directorio
+File directorio = new File("ruta/al/directorio");
+File archivo2 = new File(directorio, "archivo.txt");
+```
+```java
+// Supongamos que tenemos la siguiente estructura de carpetas: 
+File carpetaActual = new File("."); // carpeta actual
+File carpetaPadre = new File(".."); // carpeta superior
+File carpetaRaiz = new File("C:/"); // carpeta raíz de la unidad C: en Windows
+File carpeta1 = new File("C:/Users"); // carpeta Users unidad C: en Windows
+File carpeta2 = new File("../.."); // Superior de la superior
+File archivo1 = new File("../img1.png"); // C:/Users/VIRUS/Desktop/img1.png
+```
