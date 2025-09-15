@@ -1,9 +1,9 @@
 # 1. Introducción a los ficheros  
 
-Un **fichero** es una secuencia de datos almacenados en un dispositivo (disco duro, USB, etc.) para guardar información de forma no volátil.  
-Puede contener **texto, imágenes, audio, vídeo u otros formatos**.  
-Generalmente tiene **nombre, extensión y directorio**.  
-Está formado por **registros**, y estos a su vez por **campos** de distintos tipos.  
+> Un **fichero** es una secuencia de datos almacenados en un dispositivo (disco duro, USB, etc.) para guardar información de forma no volátil.  
+  - Puede contener **texto, imágenes, audio, vídeo u otros formatos**.  
+  - Generalmente tiene **nombre, extensión y directorio**.  
+  - Está formado por **registros**, y estos a su vez por **campos** de distintos tipos.  
 
 ---
 
