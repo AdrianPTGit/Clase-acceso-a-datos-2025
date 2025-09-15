@@ -35,7 +35,7 @@ Está formado por **registros**, y estos a su vez por **campos** de distintos ti
   - Incluyen:  
     - **Área de índices** → clave + dirección del registro.  
     - **Área de datos** → registros organizados secuencialmente.  
-## 1.3 Comparaciones  
+## 1.3. Comparaciones  
 
 ### Ficheros Secuenciales  
 - **Ventajas**  
@@ -62,7 +62,7 @@ La clase `File` proporciona utilidades para manejar ficheros y directorios:
 
 ---
 
-## 2.1 Proceso para trabajar con ficheros  
+## 2.1. Proceso para trabajar con ficheros  
 
 1. **Importar** los paquetes necesarios.  
 2. **Crear** un objeto `File` con la ruta del fichero.  
