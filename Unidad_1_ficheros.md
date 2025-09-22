@@ -130,3 +130,86 @@ File carpeta1 = new File("C:/Users"); // carpeta Users unidad C: en Windows
 File carpeta2 = new File("../.."); // Superior de la superior
 File archivo1 = new File("../img1.png"); // C:/Users/VIRUS/Desktop/img1.png
 ```
+### 3. Flujos o Streams
+
+Los **streams o flujos** en Java (paquete `java.io`) permiten leer y escribir datos de forma independiente al dispositivo (fichero, memoria, red, etc.).  
+Representan secuencias de bytes, ya sea de **entrada** (`InputStream`) o **salida** (`OutputStream`).  
+
+---
+
+### Flujos predefinidos en Java
+
+La clase **System** (`java.lang`) gestiona los flujos predefinidos:
+
+- `System.in`: entrada estándar (teclado).  
+- `System.out`: salida estándar (pantalla).  
+- `System.err`: salida de errores (pantalla).  
+
+### 3.1 Clasificación de los Streams
+
+Los **streams en Java** se clasifican en:
+
+- **Entrada (input)**
+- **Salida (output)**
+
+Dentro de cada uno existen dos tipos principales:
+
+---
+
+#### 🔹 Streams de bytes (8 bits / 1 byte)
+- Operaciones de entrada/salida de **bytes**.  
+- Uso: ficheros **binarios**.  
+- Descienden de: `InputStream` y `OutputStream`.  
+
+---
+
+#### 🔹 Streams de caracteres (16 bits / 2 bytes)
+- Operaciones de entrada/salida de **caracteres**.  
+- Uso: ficheros **de texto**.  
+- Descienden de: `Reader` y `Writer`.  
+### Streams en Java
+
+| Tipo                  | Clase Base       | Clases Derivadas                                                                 |
+|-----------------------|------------------|----------------------------------------------------------------------------------|
+| **Streams binarios**  | `InputStream`    | - `FileInputStream`: leer datos desde un archivo. <br> - `BufferedInputStream`: añade buffer para mejorar lectura. <br> - `DataInputStream`: leer tipos primitivos. <br> - `ObjectInputStream`: leer objetos serializables. |
+|                       | `OutputStream`   | - `FileOutputStream`: escribir datos en un archivo. <br> - `BufferedOutputStream`: añade buffer para mejorar escritura. <br> - `DataOutputStream`: escribir tipos primitivos. <br> - `ObjectOutputStream`: escribir objetos serializables. |
+| **Streams de caracteres** | `Reader`        | - `FileReader`: leer caracteres desde un archivo. <br> - `BufferedReader`: añade buffer para mejorar lectura. <br> - `InputStreamReader`: convierte un `InputStream` a `Reader`. |
+|                       | `Writer`        | - `FileWriter`: escribir caracteres en un archivo. <br> - `BufferedWriter`: añade buffer para mejorar escritura. <br> - `OutputStreamWriter`: convierte un `OutputStream` en `Writer`. |
+
+
+### ✍️ Streams de caracteres en Java
+
+- **Clases abstractas**: `Reader` y `Writer`  
+  - Manejan flujos de **caracteres Unicode**  
+  - Convierten automáticamente entre **bytes ↔ caracteres**
+
+---
+
+#### 🔗 Clases “puente” (Byte ↔ Caracter)
+- `InputStreamReader` → convierte un `InputStream` en un `Reader` (lee bytes y los convierte en caracteres)  
+- `OutputStreamReader` → convierte un `OutputStream` en un `Writer` (lee caracteres y los convierte en bytes)
+
+---
+
+#### 📂 FileReader & FileWriter
+
+- **FileReader**  
+  - Lee caracteres desde un archivo de texto  
+  - Convierte bytes a caracteres usando la codificación del sistema  
+
+- **FileWriter**  
+  - Escribe caracteres en un archivo de texto  
+  - Convierte caracteres a bytes usando la codificación del sistema  
+
+### 📂 Métodos y Constructores de FileReader y FileWriter
+
+| Método / Constructor               | Descripción                                                                 |
+|-----------------------------------|----------------------------------------------------------------------------|
+| `FileReader(String fileName)`      | Crea un objeto `FileReader` asociado con un archivo cuyo nombre se especifica como argumento. |
+| `int read()`                       | Lee un único carácter del archivo y devuelve un entero con el valor Unicode del carácter leído o -1 si se alcanza el final del archivo. |
+| `FileWriter(String fileName)`      | Crea un objeto `FileWriter` asociado con un archivo cuyo nombre se especifica como argumento. |
+| `FileWriter(String fileName, boolean append)` | Crea un objeto `FileWriter` asociado con un archivo y permite especificar si se desea agregar contenido al final del archivo existente. |
+| `void write(int c)`                | Escribe un único carácter en el archivo. |
+| `void write(String str)`           | Escribe una cadena de caracteres en el archivo. |
+| `void close()`                     | Cierra el flujo y libera los recursos asociados. |
+
